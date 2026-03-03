@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Destinasi - Wisata Budaya</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="detail-page">
+
+    <header>
+        <nav>
+            <div class="logo">INDONESIA</div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#" class="active">Detail Destinasi</a></li>
+                <li><a href="#">Review</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="detail-container">
+        <a href="index.html" class="btn-back"> < Kembali </a>
+
+        <div class="hero">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4" alt="Gambar Destinasi" class="main-img">
+        </div>
+
+        <div class="detail-header">
+            <h1>Memuat Data...</h1>
+            <p>📍 Sedang mencari lokasi...</p>
+        </div>
+
+        <section class="info-section">
+            <div class="info-card">
+                <h3>Deskripsi Singkat</h3>
+                <p>Sedang memuat deskripsi...</p>
+            </div>
+
+            <div class="info-card">
+                <h3>Nilai Budaya</h3>
+                <ul></ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Aktivitas Budaya</h3>
+                <ul></ul>
+            </div>
+
+            <div class="info-card">
+                <h3>Kearifan Lokal</h3>
+                <ul></ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const dataWisata = {
+            'agung': {
+                judul: 'Gunung Agung ★★★★★',
+                lokasi: '📍 Rendang, Karangasem, Bali',
+                gambar: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4',
+                deskripsi: 'Gunung suci tertinggi di Bali yang menjadi pusat spiritual umat Hindu.',
+                nilai: ['Tempat bersemayam para Dewa', 'Pusat orientasi suci (Kaja)', 'Kawasan Pura Besakih'],
+                aktivitas: ['Wisata religi', 'Melihat sunrise', 'Edukasi sejarah Pura'],
+                kearifan: ['Tradisi Tri Hita Karana', 'Menjaga kesucian alam']
+            },
+            'penida': {
+                judul: 'Nusa Penida ★★★★☆',
+                lokasi: '📍 Klungkung, Bali',
+                gambar: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2',
+                deskripsi: 'Pulau dengan tebing ikonik dan pura-pura sakral yang menjaga tradisi maritim Bali.',
+                nilai: ['Benteng spiritual Bali Selatan', 'Tradisi rumput laut', 'Keunikan arsitektur pura tebing'],
+                aktivitas: ['Snorkeling budaya', 'Ziarah Pura Goa Giri Putri', 'Fotografi tebing'],
+                kearifan: ['Upacara Nyepi Laut', 'Pelestarian burung Jalak Bali']
+            },
+            'borobudur': {
+                judul: 'Candi Borobudur ★★★★★',
+                lokasi: '📍 Magelang, Jawa Tengah',
+                gambar: 'candi.png',
+                deskripsi: 'Monumen Buddha terbesar di dunia, mahakarya arsitektur dinasti Syailendra.',
+                nilai: ['Warisan Dunia UNESCO', 'Filosofi perjalanan hidup manusia', 'Simbol perdamaian'],
+                aktivitas: ['Membaca relief sejarah', 'Wisata edukasi', 'Menikmati sunrise'],
+                kearifan: ['Gotong royong pelestarian', 'Nilai kesabaran dalam seni pahat']
+            },
+            'waerebo': {
+                judul: 'Desa Wae Rebo ★★★★★',
+                lokasi: '📍 Manggarai, NTT',
+                gambar: 'wae.png',
+                deskripsi: 'Desa di atas awan dengan rumah adat Mbaru Niang yang masih sangat terjaga keasliannya.',
+                nilai: ['Arsitektur rumah kerucut unik', 'Penerima penghargaan UNESCO', 'Adat leluhur yang kuat'],
+                aktivitas: ['Menginap di rumah adat', 'Upacara penyambutan Waelu', 'Mencicipi kopi asli Flores'],
+                kearifan: ['Kedaulatan pangan lokal', 'Penghormatan pada roh leluhur']
+            },
+            'naga': {
+                judul: 'Kampung Naga ★★★★☆',
+                lokasi: '📍 Tasikmalaya, Jawa Barat',
+                gambar: 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b',
+                deskripsi: 'Kampung adat Sunda yang menolak modernitas demi menjaga amanat leluhur dan keselarasan alam.',
+                nilai: ['Gaya hidup tanpa listrik', 'Keseragaman bentuk bangunan', 'Sunda Wiwitan'],
+                aktivitas: ['Wisata budaya tradisional', 'Belajar kerajinan bambu', 'Susur sungai'],
+                kearifan: ['Larangan merusak hutan (Leuweung Larangan)', 'Hidup sederhana']
+            },
+            'prambanan': {
+                judul: 'Candi Prambanan ★★★★★',
+                lokasi: '📍 Sleman, Yogyakarta',
+                gambar: 'prambanan.png',
+                deskripsi: 'Kompleks candi Hindu tercantik di Indonesia yang menceritakan kisah epik Ramayana.',
+                nilai: ['Simbol kejayaan kerajaan Mataram Kuno', 'Arsitektur tinggi Hindu', 'Kisah cinta Roro Jonggrang'],
+                aktivitas: ['Menonton Sendratari Ramayana', 'Eksplorasi relief candi', 'Bersepeda di kompleks candi'],
+                kearifan: ['Simbol akulturasi budaya', 'Ketelatenan konstruksi batu']
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+
+        if (id && dataWisata[id]) {
+            const d = dataWisata[id];
+            
+            // Mengisi konten teks
+            document.querySelector('.detail-header h1').innerText = d.judul;
+            document.querySelector('.detail-header p').innerText = d.lokasi;
+            document.querySelector('.hero img').src = d.gambar;
+            document.querySelector('.info-card p').innerText = d.deskripsi;
+
+            // Mengisi daftar list (ul)
+            const updateList = (index, items) => {
+                const lists = document.querySelectorAll('.info-card ul');
+                if(lists[index-1]) {
+                    lists[index-1].innerHTML = items.map(item => `<li>${item}</li>`).join('');
+                }
+            };
+
+            updateList(1, d.nilai);
+            updateList(2, d.aktivitas);
+            updateList(3, d.kearifan);
+        }
+    </script>
+</body>
+</html>
